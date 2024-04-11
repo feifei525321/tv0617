@@ -7,8 +7,8 @@ import requests
 import re
 import os
 
-kk = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/live2",headers=headers).text
-biaotinr = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/biaotinr",headers=headers).text
+kk = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/live2").text
+biaotinr = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/biaotinr").text
 
 import threading
 from queue import Queue
