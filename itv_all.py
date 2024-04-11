@@ -6,11 +6,10 @@ from selenium.webdriver.chrome.options import Options
 import requests
 import re
 import os
-session = requests.Session()
-session.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'})
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'}
-kk = session.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/live2",headers=headers).text
-biaotinr = session.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/biaotinr",headers=headers).text
+
+kk = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/live2",headers=headers).text
+biaotinr = requests.get("https://codeberg.org/fxf321/xuefei/raw/branch/master/biaotinr",headers=headers).text
+
 import threading
 from queue import Queue
 import eventlet
