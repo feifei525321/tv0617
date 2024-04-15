@@ -301,7 +301,7 @@ with open("itvlist.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write(f"{now_today}更新,#genre#\n")
     file.write(biaotinr+'\n')
-    file.write(kk+'\n')
+    
     file.write('央视频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
@@ -343,7 +343,7 @@ with open("itvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-    
+    file.write(kk+'\n')
 
 with open("itvlist.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
