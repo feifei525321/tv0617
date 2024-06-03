@@ -323,6 +323,19 @@ with open("itvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+    file.write('港澳频道,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if '凤凰' in channel_name or '香港' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
     channel_counters = {}
     file.write('其他频道,#genre#\n')
     for result in results:
